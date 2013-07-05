@@ -1,5 +1,7 @@
 package com.codetutr.controller;
 
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
 import javax.validation.Valid;
 
 import org.springframework.stereotype.Controller;
@@ -13,6 +15,9 @@ import com.codetutr.form.Subscriber;
 @Controller
 public class FormController {
 	
+	@PersistenceContext
+	private EntityManager entityManager;
+
 
 	@RequestMapping(value="form", method=RequestMethod.GET)
 	public String loadFormPage(Model m) {
@@ -27,6 +32,10 @@ public class FormController {
 
 		if(result.hasErrors()) {
 			return "formPage";
+		}
+		else
+		{
+			
 		}
 		
 		m.addAttribute("message", "Successfully saved person: " + subscriber.toString());
