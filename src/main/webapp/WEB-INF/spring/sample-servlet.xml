@@ -22,6 +22,9 @@
     <property name="basename" value="messages"/>
   </bean>
 
-  
+  <bean id="entityManagerFactory"
+		class="org.springframework.orm.jpa.LocalEntityManagerFactoryBean">
+		<property name="persistenceUnitName" value="TradePU" />
+	</bean>
 
 </beans>
