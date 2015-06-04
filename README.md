@@ -1,4 +1,4 @@
 spring-demo
 ===========
 
-Practiz project using Spring MVC
+Demo project using Spring MVC
